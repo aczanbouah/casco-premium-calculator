@@ -7,6 +7,84 @@
   </head>
   <body>
     <h1>Casco Premium Calculator</h1>
+    <form action="/">
+      <div id="form-wrapper">
+        <h2>Vehicle Data</h2>
+        <div class="form-container">
+          <div id="user-name">
+            <label for="user-name">Your name:</label>
+            <input type="text" name="user-name" id="user-name" />
+          </div>
+          <div id="car-model">
+            <label for="car-model">Car model:</label>
+            <select name="car-model" id="car-model">
+              <option value="dacia-logan">Dacia Logan</option>
+              <option value="volkswagen-golf">Volkswagen Golf</option>
+              <option value="renault-clio">Renault Clio</option>
+              <option value="toyota-corolla">Toyota Corolla</option>
+              <option value="skoda-octavia">Skoda Octavia</option>
+            </select>
+          </div>
+          <div id="manufacture-year">
+            <label for="manufacture-year">Manufacture year:</label>
+            <input
+              type="number"
+              name="manufacture-year"
+              id="manufacture-year"
+              min="2005"
+              max="2025"
+              step="1"
+              value="2005"
+            />
+          </div>
+          <div id="car-value">
+            <label for="car-value">Car value:</label>
+            <input
+              type="number"
+              name="car-value"
+              id="car-value"
+              min="2000"
+              value="2000"
+            />
+          </div>
+          <div id="engine-capacity">
+            <label for="engine-capacity">Engine capacity:</label>
+            <select name="engine-capacity" id="engine-capacity">
+              <option value="1.0">1.0L</option>
+              <option value="1.5">1.5L</option>
+              <option value="2.0">2.0L</option>
+              <option value="2.5">2.5L</option>
+              <option value="3.0">3.0L</option>
+              <option value="3.5">3.5L</option>
+              <option value="4.0">4.0L</option>
+              <option value="4.5">4.5L</option>
+              <option value="5.0">5.0L</option>
+              <option value="5.5">5.5L</option>
+            </select>
+          </div>
+          <div id="car-type">
+            <label for="car-type">Car type:</label>
+            <select name="car-type" id="car-type">
+              <option value="sedan">Sedan</option>
+              <option value="coupe">Coupe</option>
+              <option value="hatchback">Hatchback</option>
+              <option value="suv">SUV</option>
+            </select>
+          </div>
+          <div id="fuel-type">
+            <label for="fuel-type">Fuel type:</label>
+            <select name="fuel-type" id="fuel-type">
+              <option value="gas">Gas</option>
+              <option value="diesel">Diesel</option>
+              <option value="gpl">GPL</option>
+            </select>
+          </div>
+          <div id="submit-container">
+            <button type="submit" id="submit-btn">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
     <script src="app.js"></script>
   </body>
 </html>
