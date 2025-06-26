@@ -1,6 +1,7 @@
 const vehicleData = [];
 const driverData = [];
 const vehicleDataForm = document.querySelector("#vehicle-data");
+const vehicleSubmitBtn = document.querySelector("#vehicle-submit-btn");
 const driverDataForm = document.querySelector("#driver-data");
 
 function InsuranceQuote(vehicleData, driverData, coverageOptions) {
@@ -14,7 +15,6 @@ vehicleDataForm.addEventListener("submit", (e) => {
   const formData = new FormData(vehicleDataForm);
   const obj = Object.fromEntries(formData);
   vehicleData.push(obj);
-  vehicleDataForm.reset();
 });
 
 driverDataForm.addEventListener("submit", (e) => {
@@ -22,5 +22,9 @@ driverDataForm.addEventListener("submit", (e) => {
   const formData = new FormData(driverDataForm);
   const obj = Object.fromEntries(formData);
   driverData.push(obj);
-  driverDataForm.reset();
+});
+
+vehicleSubmitBtn.addEventListener("click", () => {
+  document.querySelector('[data-step="1"]').classList.remove("active-step");
+  document.querySelector('[data-step="2"]').classList.add("active-step");
 });

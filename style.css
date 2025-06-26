@@ -4,3 +4,11 @@
 * {
   font-family: "Roboto", sans-serif;
 }
+
+.form-container.active-step {
+  display: block;
+}
+
+.form-container {
+  display: none;
+}
