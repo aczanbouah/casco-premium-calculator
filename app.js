@@ -1,5 +1,7 @@
 const vehicleData = [];
-const vehicleDataForm = document.querySelector(".form");
+const driverData = [];
+const vehicleDataForm = document.querySelector("#vehicle-data");
+const driverDataForm = document.querySelector("#driver-data");
 
 function InsuranceQuote(vehicleData, driverData, coverageOptions) {
   this.vehicleData = vehicleData;
@@ -13,4 +15,12 @@ vehicleDataForm.addEventListener("submit", (e) => {
   const obj = Object.fromEntries(formData);
   vehicleData.push(obj);
   vehicleDataForm.reset();
+});
+
+driverDataForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = new FormData(driverDataForm);
+  const obj = Object.fromEntries(formData);
+  driverData.push(obj);
+  driverDataForm.reset();
 });

@@ -7,8 +7,8 @@
   </head>
   <body>
     <h1>Casco Premium Calculator</h1>
-    <form action="/" class="form">
-      <div id="form-wrapper">
+    <form action="/" id="vehicle-data">
+      <div class="form-wrapper">
         <h2>Vehicle Data</h2>
         <div class="form-container">
           <div id="car-model">
@@ -75,9 +75,83 @@
               <option value="gpl">GPL</option>
             </select>
           </div>
-          <div id="submit-container">
-            <button type="submit" id="submit-btn">Submit</button>
+          <div class="submit-container">
+            <button type="submit" id="vehicle-submit-btn">Submit</button>
           </div>
+        </div>
+      </div>
+    </form>
+    <form action="/" id="driver-data">
+      <h2>Driver Data</h2>
+      <div class="form-wrapper">
+        <div id="driver-age">
+          <label for="driver-age">Driver age:</label>
+          <select name="driver-age" id="driver-age">
+            <option value="18-25">18-25</option>
+            <option value="26-35">26-35</option>
+            <option value="36-50">36-50</option>
+            <option value="51-65">51-65</option>
+            <option value="65+">65+</option>
+          </select>
+        </div>
+        <div id="driver-experience">
+          <label for="driver-experience">Driver experience:</label>
+          <select name="driver-experience" id="driver-experience">
+            <option value="0-2">0-2 years</option>
+            <option value="3-5">3-5 years</option>
+            <option value="6-10">6-10 years</option>
+            <option value="11-20">11-20 years</option>
+            <option value="20+">20+ years</option>
+          </select>
+        </div>
+        <div id="claims-history">
+          <label for="claims-history">Claims history (last 5 years):</label>
+          <select name="claims-history" id="claims-history">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3+">3+</option>
+          </select>
+        </div>
+        <div id="location">
+          <label for="location">Location:</label>
+          <select name="location" id="location">
+            <option value="bucharest">Bucharest</option>
+            <option value="cluj-napoca">Cluj-Napoca</option>
+            <option value="timisoara">Timisoara</option>
+            <option value="constanta">Constanta</option>
+            <option value="other">Other cities</option>
+          </select>
+        </div>
+        <div id="annual-mileage">
+          <label for="annual-mileage">Annual mileage:</label>
+          <select name="annual-mileage" id="annual-mileage">
+            <option value="under-10k">Under 10000</option>
+            <option value="10k-20k">10000 - 20000</option>
+            <option value="20k-30k">20000 - 30000</option>
+            <option value="over-30k">Over 30000</option>
+          </select>
+        </div>
+        <div id="primary-use">
+          <label for="primary-use">Primary use:</label>
+          <select name="primary-use" id="primary-use">
+            <option value="personal">Personal</option>
+            <option value="business">Business</option>
+            <option value="commercial">Commercial</option>
+            <option value="rideshare">Rideshare</option>
+          </select>
+        </div>
+        <div id="parking-type">
+          <label for="parking-type">Parking type:</label>
+          <select name="parking-type" id="parking-type">
+            <option value="private-garage">Private garage</option>
+            <option value="secured-parking-lot">Secured parking lot</option>
+            <option value="street-parking">Street parking</option>
+            <option value="high-risk-area">High risk area</option>
+          </select>
+        </div>
+        <div class="submit-container">
+          <button type="submit" id="driver-submit-btn">Submit</button>
         </div>
       </div>
     </form>
