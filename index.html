@@ -9,10 +9,10 @@
   </head>
   <body>
     <h1>Casco Premium Calculator</h1>
-    <div class="form-container active-step" data-step="1">
+    <section class="form-container active-step" data-step="1">
       <form action="/" id="vehicle-data">
-        <h2>Vehicle Data</h2>
-        <div class="form-wrapper">
+        <fieldset class="form-wrapper">
+          <legend>Vehicle data</legend>
           <div id="car-model">
             <label for="car-model">Car model:</label>
             <select name="car-model" id="car-model">
@@ -80,13 +80,13 @@
           <div class="submit-container">
             <button type="submit" id="vehicle-submit-btn">Submit</button>
           </div>
-        </div>
+        </fieldset>
       </form>
-    </div>
-    <div class="form-container" data-step="2">
+    </section>
+    <section class="form-container" data-step="2">
       <form action="/" id="driver-data">
-        <h2>Driver Data</h2>
-        <div class="form-wrapper">
+        <fieldset class="form-wrapper">
+          <legend>Driver data</legend>
           <div id="driver-age">
             <label for="driver-age">Driver age:</label>
             <select name="driver-age" id="driver-age">
@@ -156,9 +156,110 @@
           <div class="submit-container">
             <button type="submit" id="driver-submit-btn">Submit</button>
           </div>
+        </fieldset>
+      </form>
+    </section>
+    <section class="form-container" data-step="3">
+      <form action="/" id="coverage-options">
+        <fieldset>
+          <legend>Coverage options:</legend>
+          <input
+            type="radio"
+            name="deductible-amount"
+            id="deductible-20"
+            value="20"
+            checked
+          />
+          <label for="deductible-20">€250 (premium -20%)</label>
+          <input
+            type="radio"
+            name="deductible-amount"
+            id="deductible-15"
+            value="15"
+          />
+          <label for="deductible-15">€500 (premium -15%)</label>
+          <input
+            type="radio"
+            name="deductible-amount"
+            id="deductible-10"
+            value="10"
+          />
+          <label for="deductible-10">€1000 (premium -10%)</label>
+          <input
+            type="radio"
+            name="deductible-amount"
+            id="deductible-5"
+            value="5"
+          />
+          <label for="deductible-5">€2000 (premium -5%)</label>
+          <input
+            type="radio"
+            name="deductible-amount"
+            id="deductible-0"
+            value="0"
+          />
+          <label for="deductible-0">€0 (full coverage, base premium)</label>
+        </fieldset>
+        <fieldset>
+          <legend>Coverage limits</legend>
+          <input type="radio" name="coverage-limits" id="basic" value="0" />
+          <label for="basic">Basic: €50,000 max payout</label>
+          <input type="radio" name="coverage-limits" id="standard" value="15" />
+          <label for="standard">Standard: €100,000 max payout</label>
+          <input type="radio" name="coverage-limits" id="premium" value="30" />
+          <label for="premium">Premium: €200,000 max payout</label>
+          <input
+            type="radio"
+            name="coverage-limits"
+            id="unlimited"
+            value="50"
+          />
+          <label for="unlimited">Unlimited: No limit</label>
+        </fieldset>
+        <fieldset>
+          <legend>Optional add-ons</legend>
+          <input
+            type="checkbox"
+            name="add-on"
+            id="roadside-assistance"
+            value="120"
+          /><label for="roadside-assistance">Roadside assistance</label
+          ><input
+            type="checkbox"
+            name="add-on"
+            id="rental-car"
+            value="180"
+          /><label for="rental-car">Rental car coverage</label
+          ><input
+            type="checkbox"
+            name="add-on"
+            id="glass-coverage"
+            value="85"
+          /><label for="glass-coverage">Glass coverage</label
+          ><input
+            type="checkbox"
+            name="add-on"
+            id="theft-protection"
+            value="150"
+          /><label for="theft-protection">Theft protection upgrade</label
+          ><input
+            type="checkbox"
+            name="add-on"
+            id="natural-disaster"
+            value="200"
+          /><label for="natural-disaster">Natural disaster coverage</label
+          ><input
+            type="checkbox"
+            name="add-on"
+            id="personal-belongings"
+            value="85"
+          /><label for="personal-belongings">Personal belongings</label>
+        </fieldset>
+        <div>
+          <button type="submit">Submit</button>
         </div>
       </form>
-    </div>
+    </section>
     <script src="app.js"></script>
   </body>
 </html>
