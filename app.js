@@ -1,8 +1,13 @@
+// let currentStep = 1;
 const vehicleData = [];
 const driverData = [];
+const coverageOptions = [];
 const vehicleDataForm = document.querySelector("#vehicle-data");
-const vehicleSubmitBtn = document.querySelector("#vehicle-submit-btn");
+// const vehicleSubmitBtn = document.querySelector("#vehicle-submit-btn");
 const driverDataForm = document.querySelector("#driver-data");
+// const driverSubmitBtn = document.querySelector("#driver-submit-btn");
+const backBtn = document.querySelector("#back-btn");
+const nextBtn = document.querySelector("#next-btn");
 
 function InsuranceQuote(vehicleData, driverData, coverageOptions) {
   this.vehicleData = vehicleData;
@@ -24,7 +29,26 @@ driverDataForm.addEventListener("submit", (e) => {
   driverData.push(obj);
 });
 
-vehicleSubmitBtn.addEventListener("click", () => {
-  document.querySelector('[data-step="1"]').classList.remove("active-step");
-  document.querySelector('[data-step="2"]').classList.add("active-step");
-});
+function updateStep(direction) {
+  const allSteps = document.querySelectorAll("[data-step]");
+  const currentActiveContainer = document.querySelector(".active-step");
+  const currentStep = parseInt(currentActiveContainer.dataset.step);
+  let targetStep;
+  allSteps.forEach((step) => {
+    step.classList.remove("active-step");
+  });
+
+  if (direction === "next" && currentStep < 3) {
+    targetStep = currentStep + 1;
+  } else if (direction === "back" && currentStep > 1) {
+    targetStep = currentStep - 1;
+  }
+
+  if (targetStep) {
+    document
+      .querySelector(`[data-step="${targetStep}"]`)
+      .classList.add("active-step");
+  }
+}
+nextBtn.addEventListener("click", () => updateStep("next"));
+backBtn.addEventListener("click", () => updateStep("back"));
