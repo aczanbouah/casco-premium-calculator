@@ -30,10 +30,13 @@ driverDataForm.addEventListener("submit", (e) => {
 });
 
 function updateStep(direction) {
+  //Find current active step
   const allSteps = document.querySelectorAll("[data-step]");
   const currentActiveContainer = document.querySelector(".active-step");
   const currentStep = parseInt(currentActiveContainer.dataset.step);
   let targetStep;
+
+  //Remove active step class from all form containers and assign to target active step based on forward/back direction
   allSteps.forEach((step) => {
     step.classList.remove("active-step");
   });
@@ -49,6 +52,13 @@ function updateStep(direction) {
       .querySelector(`[data-step="${targetStep}"]`)
       .classList.add("active-step");
   }
+  updateButtons(targetStep);
 }
+
+function updateButtons(step) {
+  backBtn.disabled = step === 1;
+  nextBtn.disabled = step === 3;
+}
+
 nextBtn.addEventListener("click", () => updateStep("next"));
 backBtn.addEventListener("click", () => updateStep("back"));
