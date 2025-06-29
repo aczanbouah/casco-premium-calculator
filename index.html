@@ -13,7 +13,7 @@
       <form action="/" id="vehicle-data">
         <fieldset class="form-wrapper">
           <legend>Vehicle data</legend>
-          <div id="car-model">
+          <div class="form-item">
             <label for="car-model">Car model:</label>
             <select name="car-model" id="car-model">
               <option value="dacia-logan">Dacia Logan</option>
@@ -23,7 +23,7 @@
               <option value="skoda-octavia">Skoda Octavia</option>
             </select>
           </div>
-          <div id="manufacture-year">
+          <div class="form-item">
             <label for="manufacture-year">Manufacture year:</label>
             <input
               type="number"
@@ -35,7 +35,7 @@
               value="2005"
             />
           </div>
-          <div id="car-value">
+          <div class="form-item">
             <label for="car-value">Car value:</label>
             <input
               type="number"
@@ -45,7 +45,7 @@
               value="2000"
             />
           </div>
-          <div id="engine-capacity">
+          <div class="form-item">
             <label for="engine-capacity">Engine capacity:</label>
             <select name="engine-capacity" id="engine-capacity">
               <option value="1.0">1.0L</option>
@@ -60,7 +60,7 @@
               <option value="5.5">5.5L</option>
             </select>
           </div>
-          <div id="car-type">
+          <div class="form-item">
             <label for="car-type">Car type:</label>
             <select name="car-type" id="car-type">
               <option value="sedan">Sedan</option>
@@ -69,7 +69,7 @@
               <option value="suv">SUV</option>
             </select>
           </div>
-          <div id="fuel-type">
+          <div class="form-item">
             <label for="fuel-type">Fuel type:</label>
             <select name="fuel-type" id="fuel-type">
               <option value="gas">Gas</option>
@@ -87,7 +87,7 @@
       <form action="/" id="driver-data">
         <fieldset class="form-wrapper">
           <legend>Driver data</legend>
-          <div id="driver-age">
+          <div class="form-item">
             <label for="driver-age">Driver age:</label>
             <select name="driver-age" id="driver-age">
               <option value="18-25">18-25</option>
@@ -97,7 +97,7 @@
               <option value="65+">65+</option>
             </select>
           </div>
-          <div id="driver-experience">
+          <div class="form-item">
             <label for="driver-experience">Driver experience:</label>
             <select name="driver-experience" id="driver-experience">
               <option value="0-2">0-2 years</option>
@@ -107,7 +107,7 @@
               <option value="20+">20+ years</option>
             </select>
           </div>
-          <div id="claims-history">
+          <div class="form-item">
             <label for="claims-history">Claims history (last 5 years):</label>
             <select name="claims-history" id="claims-history">
               <option value="0">0</option>
@@ -116,7 +116,7 @@
               <option value="3+">3+</option>
             </select>
           </div>
-          <div id="location">
+          <div class="form-item">
             <label for="location">Location:</label>
             <select name="location" id="location">
               <option value="bucharest">Bucharest</option>
@@ -126,7 +126,7 @@
               <option value="other">Other cities</option>
             </select>
           </div>
-          <div id="annual-mileage">
+          <div class="form-item">
             <label for="annual-mileage">Annual mileage:</label>
             <select name="annual-mileage" id="annual-mileage">
               <option value="under-10k">Under 10000</option>
@@ -135,7 +135,7 @@
               <option value="over-30k">Over 30000</option>
             </select>
           </div>
-          <div id="primary-use">
+          <div class="form-item">
             <label for="primary-use">Primary use:</label>
             <select name="primary-use" id="primary-use">
               <option value="personal">Personal</option>
@@ -144,7 +144,7 @@
               <option value="rideshare">Rideshare</option>
             </select>
           </div>
-          <div id="parking-type">
+          <div class="form-item">
             <label for="parking-type">Parking type:</label>
             <select name="parking-type" id="parking-type">
               <option value="private-garage">Private garage</option>
@@ -264,6 +264,14 @@
       <button type="button" class="btn" id="back-btn" disabled>Back</button>
       <button type="button" class="btn" id="next-btn">Next</button>
       <button type="button" class="btn" id="submit-btn">Submit</button>
+    </div>
+    <div class="price-display">
+      <p id="total-price">1740</p>
+      <p id="base-price">1200 for 30000</p>
+      <p id="driver-age">+20% - 1440</p>
+      <p id="claims">1 claim: +25% - 1800</p>
+      <p id="features">GPS -10% - 1620</p>
+      <p id="total-add-ons">Roadside - + 120</p>
     </div>
     <script src="app.js"></script>
   </body>

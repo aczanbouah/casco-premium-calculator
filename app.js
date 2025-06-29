@@ -34,24 +34,24 @@ function updateStep(direction) {
   const allSteps = document.querySelectorAll("[data-step]");
   const currentActiveContainer = document.querySelector(".active-step");
   const currentStep = parseInt(currentActiveContainer.dataset.step);
-  let targetStep;
+  let targetStep = currentStep;
 
-  //Remove active step class from all form containers and assign to target active step based on forward/back direction
+  //Remove active step class from all form containers
   allSteps.forEach((step) => {
     step.classList.remove("active-step");
   });
 
+  //Calculate target step
   if (direction === "next" && currentStep < 3) {
     targetStep = currentStep + 1;
   } else if (direction === "back" && currentStep > 1) {
     targetStep = currentStep - 1;
   }
+  // Apple active step class to result
+  document
+    .querySelector(`[data-step="${targetStep}"]`)
+    .classList.add("active-step");
 
-  if (targetStep) {
-    document
-      .querySelector(`[data-step="${targetStep}"]`)
-      .classList.add("active-step");
-  }
   updateButtons(targetStep);
 }
 
